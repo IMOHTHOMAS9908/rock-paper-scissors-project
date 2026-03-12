@@ -2,60 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,
-     initial-scale=1.0">
-    <title>Rock-Paper-Scissors</title>
-    <link rel="stylesheet" href ="styles.css"> 
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position :relative;
+
+            
+            background-color: #6a3030;
+        }
+        .div1 {
+            background-color:purple;
+            color: white;
+
+             
+            
+            
+        }
+
+        .div2{
+            background-color:pink;
+            color: white;
+        }
+
+        .container{
+        
+            display: grid;
+            grid-template-columns:1fr 1fr ;
+        
+            
+
+}
+        .hero-section{
+                 background-color: white;
+                 color: orange;
+                 
+                 height :20rem;
+                 margin: 1rem auto;
+                 width:auto;
+                 right:20px;
+                 left:20px;
+                 border-radius :7px;
+                 display:grid;
+                 grid-template-columns: 1fr ;
+
+        }
+
+        .items{
+            background-color: #6a3030;
+            color: white;
+            margin: 1rem auto;
+            width: 80%;
+            height: 5rem;
+            border-radius :7px;
+        }
+
+        
+
+    </style>
 </head>
 <body>
-  <h3 class="title">Rock paper scissors</h3> 
-  
-    <button onclick="
-          playGame ('Rock');
-        " class="move-button">
-    <img src="images/rock-emoji.png" alt="" class="move-icon"></button>
 
-
-    <button onclick="
-          playGame('Paper');
-
-    " class="move-button"><img src="images/paper-emoji.png" alt="" class="move-icon" ></button>
-
-
-    <button onclick="
-          playGame('Scissors');
-
-    " class="move-button"> <img src="images/scissors-emoji.png" alt="" class="move-icon"></button>
-    <p class = "js-result result"> </p>
-    <p class ="js-move">
-    </p>
-
-        <p class ="js-score"></p>
-
-
-
-    <button onclick="
-    score.wins=0;
-    score.losses=0;
-    score.ties=0;
     
-    localStorage.removeItem('score');
-    updateScoreElement();
-    "  class ="reset-score-button score">Reset Score</button>
+    <div class="hero-section">  
+       <button class ="items" onclick="window.location.href='rps.html';">
+
+        <h2>Rock paper scissors game</h2>
+       </button>
 
 
-  <div><button onclick="window.location.href='howtoplay.html';"
-   class="how-to-play-button">How to Play</button></div>
+
 
 
     
-        <script  src="script.js">
-        
-        </script> 
-                   
+    
+    
 
- 
+    
+  <button onclick="window.location.href='stopwatch.html';"
+   class="items"><h2>Stop Watch</h2></button>
+
+
+   
+
 </body>
-
 </html>

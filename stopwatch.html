@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch + Timer Alarm</title>
+<link rel="stylesheet" href="stopwatch.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>⏱ Timer</h1>
+
+<div class="mode">
+<button onclick="setMode('stopwatch')">Stopwatch</button>
+<button onclick="setMode('timer')">Set Timer</button>
+</div>
+
+<div class="inputs" id="timerInputs" style="display:none">
+<input type="number" id="setH" placeholder="HH" min="0">
+<input type="number" id="setM" placeholder="MM" min="0" max="59">
+<input type="number" id="setS" placeholder="SS" min="0" max="59">
+</div>
+
+<div class="time" id="display">00:00:00</div>
+
+<div class="buttons">
+<button class="start" onclick="start()">Start</button>
+<button class="stop" onclick="stop()">Stop</button>
+<button class="reset" onclick="reset()">Reset</button>
+</div>
+
+<audio id="alarm" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+
+</div>
+
+<script src="stopwatch.js"></script>
+
+<div class="livetime">
+
+<iframe src="livetime.html" scrolling="no"></iframe>
+</div>
+</body>
+</html>

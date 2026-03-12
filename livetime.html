@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            font-family:Arial;
+            }
+
+            #clock{
+            background-color:linear-gradient(135deg,#0f2027,#203a43,#2c5364);;
+            font-weight:bold;
+            color:white;
+            }
+</style>
+</head>
+
+
+<body>
+    
+    <div id="clock"></div>
+
+<script>
+    
+        function updateClock() {
+        const now = new Date();
+        document.getElementById("clock").innerHTML = now.toLocaleString();
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+</script>
+</body>
+</html>

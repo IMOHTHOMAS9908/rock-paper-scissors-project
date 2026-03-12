@@ -1,7 +1,7 @@
     
     
-    
-    let score = JSON.parse(localStorage.getItem
+ /*   
+   let score = JSON.parse(localStorage.getItem
       ('score')) || {
         wins: 0,
         losses: 0,
@@ -18,8 +18,8 @@ updateScoreElement();
 
       
 
-   
-          function playGame (playerMove)
+   /*
+         function playGame (playerMove)
            { 
 
 
@@ -116,3 +116,229 @@ document.querySelector('.js-move').innerHTML =
 
 
           }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* // Preload all sounds at the top
+const clickSound = new Audio("sounds/dragon.mp3");
+clickSound.preload = "auto";
+const WinSound = new Audio("sounds/WinSound.mp3");
+WinSound.preload = "auto";
+const LoseSound = new Audio("sounds/LoseSound.mp3");
+LoseSound.preload = "auto";
+const TieSound = new Audio("sounds/TieSound.mp3");
+TieSound.preload = "auto";
+
+let score = JSON.parse(localStorage.getItem('score')) || {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
+updateScoreElement();
+
+function playGame(playerMove) {
+  // Play click sound immediately
+  clickSound.currentTime = 0;
+  clickSound.play();
+
+  const computerMove = pickComputerMove();
+  let result = '';
+
+  if (playerMove === 'Scissors') {
+    if (computerMove === 'Rock') {
+      result = 'You Lose';
+    } else if (computerMove === 'Paper') {
+      result = 'You Win';
+    } else if (computerMove === 'Scissors') {
+      result = 'Tie';
+    }
+  } else if (playerMove === 'Paper') {
+    if (computerMove === 'Rock') {
+      result = 'You Win';
+    } else if (computerMove === 'Paper') {
+      result = 'Tie';
+    } else if (computerMove === 'Scissors') {
+      result = 'You Lose';
+    }
+  } else if (playerMove === 'Rock') {
+    if (computerMove === 'Rock') {
+      result = 'Tie';
+    } else if (computerMove === 'Paper') {
+      result = 'You Lose';
+    } else if (computerMove === 'Scissors') {
+      result = 'You Win';
+    }
+  }
+
+  // Update score
+  if (result === 'You Win') {
+    score.wins += 1;
+    setTimeout(() => {
+      WinSound.currentTime = 0;
+      WinSound.play();
+    }, 100);
+  } else if (result === 'You Lose') {
+    score.losses += 1;
+    setTimeout(() => {
+      LoseSound.currentTime = 0;
+      LoseSound.play();
+    }, 100);
+  } else if (result === 'Tie') {
+    score.ties += 1;
+    setTimeout(() => {
+      TieSound.currentTime = 0;
+      TieSound.play();
+    }, 100);
+  }
+
+  localStorage.setItem('score', JSON.stringify(score));
+  updateScoreElement();
+
+  document.querySelector('.js-result').innerHTML = result;
+  document.querySelector('.js-move').innerHTML = `
+    you 
+    <img src="images/${playerMove.toLowerCase()}-emoji.png" class="move-icon">
+    <img src="images/${computerMove.toLowerCase()}-emoji.png" class="move-icon">
+    computer`;
+
+  alert(`You picked ${playerMove}, the computer picked ${computerMove}. ${result}\n\nwins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`);
+}
+
+function updateScoreElement() {
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
+
+function pickComputerMove() {
+  const randomNumber = Math.random();
+  let computerMove = '';
+
+  if (randomNumber >= 0 && randomNumber <= 1/3) {
+    computerMove = 'Rock';
+  } else if (randomNumber >= 1/3 && randomNumber <= 2/3) {
+    computerMove = 'Paper';
+  } else if (randomNumber >= 2/3 && randomNumber <= 1) {
+    computerMove = 'Scissors';
+  }
+  return computerMove;
+}*/
+
+
+
+
+
+
+
+
+
+// Preload all sounds at the top
+const clickSound = new Audio("sounds/dragon.mp3");
+clickSound.preload = "auto";
+/*const WinSound = new Audio("sounds/WinSound.mp3");
+WinSound.preload = "auto";
+const LoseSound = new Audio("sounds/LoseSound.mp3");
+LoseSound.preload = "auto";
+const TieSound = new Audio("sounds/TieSound.mp3");
+TieSound.preload = "auto";*/
+
+let score = JSON.parse(localStorage.getItem('score')) || {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
+updateScoreElement();
+
+function playGame(playerMove) {
+  // Play click sound immediately
+  clickSound.currentTime = 0;
+  clickSound.play();
+
+  const computerMove = pickComputerMove();
+  let result = '';
+
+  if (playerMove === 'Scissors') {
+    if (computerMove === 'Rock') {
+      result = 'You Lose';
+    } else if (computerMove === 'Paper') {
+      result = 'You Win';
+    } else if (computerMove === 'Scissors') {
+      result = 'Tie';
+    }
+  } else if (playerMove === 'Paper') {
+    if (computerMove === 'Rock') {
+      result = 'You Win';
+    } else if (computerMove === 'Paper') {
+      result = 'Tie';
+    } else if (computerMove === 'Scissors') {
+      result = 'You Lose';
+    }
+  } else if (playerMove === 'Rock') {
+    if (computerMove === 'Rock') {
+      result = 'Tie';
+    } else if (computerMove === 'Paper') {
+      result = 'You Lose';
+    } else if (computerMove === 'Scissors') {
+      result = 'You Win';
+    }
+  }
+
+  // Update score
+  if (result === 'You Win') {
+    score.wins += 1;
+    setTimeout(() => {
+      WinSound.currentTime = 0;
+      WinSound.play();
+    }, 100);
+  } else if (result === 'You Lose') {
+    score.losses += 1;
+    setTimeout(() => {
+      LoseSound.currentTime = 0;
+      LoseSound.play();
+    }, 100);
+  } else if (result === 'Tie') {
+    score.ties += 1;
+    setTimeout(() => {
+      TieSound.currentTime = 0;
+      TieSound.play();
+    }, 100);
+  }
+
+  localStorage.setItem('score', JSON.stringify(score));
+  updateScoreElement();
+
+  // Display result and moves on page (NO ALERT)
+  document.querySelector('.js-result').innerHTML = result;
+  document.querySelector('.js-move').innerHTML = `
+    you 
+    <img src="images/${playerMove.toLowerCase()}-emoji.png" class="move-icon">
+    <img src="images/${computerMove.toLowerCase()}-emoji.png" class="move-icon">
+    computer`;
+}
+
+function updateScoreElement() {
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
+
+function pickComputerMove() {
+  const randomNumber = Math.random();
+  let computerMove = '';
+
+  if (randomNumber >= 0 && randomNumber <= 1/3) {
+    computerMove = 'Rock';
+  } else if (randomNumber >= 1/3 && randomNumber <= 2/3) {
+    computerMove = 'Paper';
+  } else if (randomNumber >= 2/3 && randomNumber <= 1) {
+    computerMove = 'Scissors';
+  }
+  return computerMove;
+}
